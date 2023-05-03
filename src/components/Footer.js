@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-        <>
-            <h5 class="footer">Created by Raymond Kneipp and Sam Saenz</h5>
-        </>
+        <footer>
+            <h5 className="footer">Created by Raymond Kneipp and Sam Saenz</h5>
+        </footer>
     )
 }
 
