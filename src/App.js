@@ -25,8 +25,8 @@ function App() {
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/treeindex" element={<TreeIndex />} />
-      <Route path="/treeshow" element={<TreeShow />} />
+      <Route path="/treeindex" element={<TreeIndex trees={trees}/>} />
+      <Route path="/treeshow/:id" element={<TreeShow trees={trees}/>} />
       <Route path="/treenew" element={<TreeNew />} />
       <Route path="/treeedit" element={<TreeEdit />} />
       <Route path="*" element={<NotFound />} />
