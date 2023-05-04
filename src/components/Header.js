@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import logo from '../assets/branch-logo.png'
 
 function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ function Header(args) {
   return (
     <div>
       <Navbar expand='md' container='xl'>
+        <img src={logo} width={80} height={80} style={{marginRight: '1rem'}} />
         <NavbarBrand href="/">Branch</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
