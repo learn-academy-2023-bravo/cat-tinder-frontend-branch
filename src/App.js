@@ -18,15 +18,20 @@ function App() {
 
   console.log(trees)
 
+  const createTree = (tree) => {
+    console.log(tree)
+    setTrees([tree, ...trees])
+  }
+
   return (
     <>
       <Header />
-      <Container fluid='sm' tag='main'>
+      <Container fluid='sm' tag='main' style={{flexGrow: 1}}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/treeindex' element={<TreeIndex trees={trees} />} />
           <Route path='/treeshow/:id' element={<TreeShow trees={trees} />} />
-          <Route path='/treenew' element={<TreeNew />} />
+          <Route path='/treenew' element={<TreeNew createTree={createTree}/>} />
           <Route path='/treeedit' element={<TreeEdit />} />
           <Route path='*' element={<NotFound />} />
         </Routes>

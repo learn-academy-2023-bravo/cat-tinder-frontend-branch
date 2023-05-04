@@ -14,7 +14,7 @@ const TreeIndex = ({ trees }) => {
     <Row>
       {trees.map((tree, index) => {
         return (
-          <Col xs={12} sm={6} md={4} lg={3}>
+          <Col xs={12} sm={6} md={4} lg={3} key={tree.id}>
             <NavLink
               to={`/treeshow/${tree.id}`}
               style={{ textDecoration: 'none' }}
