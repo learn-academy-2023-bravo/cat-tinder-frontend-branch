@@ -18,6 +18,11 @@ function App() {
 
   console.log(trees)
 
+  const createTree = (tree) => {
+    console.log(tree)
+    setTrees([tree, ...trees])
+  }
+
   return (
     <>
       <Header />
@@ -26,7 +31,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/treeindex' element={<TreeIndex trees={trees} />} />
           <Route path='/treeshow/:id' element={<TreeShow trees={trees} />} />
-          <Route path='/treenew' element={<TreeNew />} />
+          <Route path='/treenew' element={<TreeNew createTree={createTree}/>} />
           <Route path='/treeedit' element={<TreeEdit />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
