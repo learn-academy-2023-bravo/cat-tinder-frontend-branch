@@ -94,6 +94,12 @@
   background-position: center;
 }
 
+.show-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .show-image {
   display: block;
   width: 100%;
