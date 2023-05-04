@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { Container } from 'reactstrap'
+import { NavLink, useParams } from 'react-router-dom'
+import { Button } from 'reactstrap'
 
 const TreeShow = ({ trees }) => {
   const { id } = useParams()
@@ -8,8 +8,8 @@ const TreeShow = ({ trees }) => {
   console.log(currentTree)
 
   return (
-    <main>
-      <Container className='show-profile' fluid='sm'>
+    <div>
+      <div className='show-profile'>
         <h1>
           {currentTree.name}, Age: {currentTree.age}
         </h1>
@@ -25,8 +25,11 @@ const TreeShow = ({ trees }) => {
           />
         </div>
         <p>{currentTree.enjoys}</p>
-      </Container>
-    </main>
+      </div>
+      <Button color='secondary' to='/treeindex' tag={NavLink} outline={true}>
+        Back
+      </Button>
+    </div>
   )
 }
 
