@@ -50,10 +50,19 @@
   margin-top: auto;
   font-size: small;
   text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e3e3e3;
+  margin-top: 1rem;
 }
 
-.card {
+.tree-card {
   margin: 2rem 0;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.tree-card:hover {
+  transform: scale(1.03);
 }
 
 .tree-card img {
@@ -105,4 +114,8 @@
   width: 100%;
   height: auto;
   z-index: 1;
+}
+
+.slogan {
+  text-align: center;
 }

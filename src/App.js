@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <Header />
-      <Container fluid='sm' tag='main'>
+      <Container fluid='sm' tag='main' style={{flexGrow: 1}}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/treeindex' element={<TreeIndex trees={trees} />} />
