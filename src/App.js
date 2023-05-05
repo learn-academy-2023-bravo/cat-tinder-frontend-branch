@@ -15,34 +15,35 @@ import { Container } from 'reactstrap'
 
 function App() {
   const [trees, setTrees] = useState(mockTrees)
-  const id = Math.floor(Math.random() * 9000000000) + 1000000000;
-
-  // console.log(trees)
+  const id = Math.floor(Math.random() * 9000000000) + 1000000000
 
   const createTree = (tree) => {
-    // console.log(tree)
-    setTrees([{...tree, id}, ...trees])
+    setTrees([{ ...tree, id }, ...trees])
   }
 
   const updateTree = (tree) => {
-    console.log(tree)
-    const treeToUpdate = trees.findIndex(t => tree.id === t.id)
+    const treeToUpdate = trees.findIndex((t) => tree.id === t.id)
     const mockArray = [...trees]
     mockArray[treeToUpdate] = tree
     setTrees(mockArray)
-    console.log(treeToUpdate)
   }
 
   return (
     <>
       <Header />
-      <Container fluid='sm' tag='main' style={{flexGrow: 1}}>
+      <Container fluid='sm' tag='main' style={{ flexGrow: 1 }}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/treeindex' element={<TreeIndex trees={trees} />} />
           <Route path='/treeshow/:id' element={<TreeShow trees={trees} />} />
-          <Route path='/treenew' element={<TreeNew createTree={createTree}/>} />
-          <Route path='/treeedit/:id' element={<TreeEdit trees={trees} updateTree={updateTree}/>} />
+          <Route
+            path='/treenew'
+            element={<TreeNew createTree={createTree} />}
+          />
+          <Route
+            path='/treeedit/:id'
+            element={<TreeEdit trees={trees} updateTree={updateTree} />}
+          />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Container>

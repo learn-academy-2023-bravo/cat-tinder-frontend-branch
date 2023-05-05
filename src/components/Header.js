@@ -11,7 +11,7 @@ import {
 import { NavLink as RRNavLink } from 'react-router-dom'
 import logo from '../assets/branch-logo.png'
 
-function Header(args) {
+function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen)
@@ -32,10 +32,14 @@ function Header(args) {
         <Collapse isOpen={isOpen} navbar>
           <Nav className='me-auto' navbar>
             <NavItem>
-              <NavLink to='/treeindex' tag={RRNavLink}>All Trees</NavLink>
+              <NavLink to='/treeindex' tag={RRNavLink}>
+                All Trees
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to='/treenew' tag={RRNavLink}>New Tree</NavLink>
+              <NavLink to='/treenew' tag={RRNavLink}>
+                New Tree
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

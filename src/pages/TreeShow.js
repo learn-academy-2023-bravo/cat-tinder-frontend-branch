@@ -43,9 +43,7 @@ const LeftArrow = () => {
 
 const TreeShow = ({ trees }) => {
   const { id } = useParams()
-  // console.log(id)
   let currentTree = trees?.find((tree) => tree.id === +id)
-  // console.log(currentTree)
 
   const index = trees.findIndex((tree) => tree.id === +id)
   const next = trees[index + 1 > trees.length - 1 ? 0 : index + 1].id
@@ -92,7 +90,12 @@ const TreeShow = ({ trees }) => {
         <Button color='secondary' to='/treeindex' tag={NavLink} outline={true}>
           Back
         </Button>
-        <Button color='secondary' to={`/treeedit/${id}`} tag={NavLink} outline={true}>
+        <Button
+          color='secondary'
+          to={`/treeedit/${id}`}
+          tag={NavLink}
+          outline={true}
+        >
           Edit
         </Button>
       </div>

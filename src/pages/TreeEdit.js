@@ -36,7 +36,7 @@ const TreeEdit = ({ updateTree, trees }) => {
 
   return (
     <>
-      <Card style={{maxWidth: '36rem', margin: 'auto'}}>
+      <Card style={{ maxWidth: '36rem', margin: 'auto' }}>
         <CardBody>
           <Form onSubmit={handleSubmit}>
             <FormGroup>
@@ -83,7 +83,7 @@ const TreeEdit = ({ updateTree, trees }) => {
               Submit
             </Button>
           </Form>
-          <Preview source={updatedTree.image}/>
+          <Preview source={updatedTree.image} />
         </CardBody>
       </Card>
     </>

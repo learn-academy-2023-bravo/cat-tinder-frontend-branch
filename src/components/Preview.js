@@ -4,7 +4,7 @@ const Preview = ({ source }) => {
   const [isValidImage, setIsValidImage] = useState(null)
 
   useEffect(() => {
-    async function checkImageValidity() {
+    const checkImageValidity = async () => {
       try {
         const response = await fetch(source, { method: 'HEAD' })
         const contentType = response.headers.get('Content-Type')

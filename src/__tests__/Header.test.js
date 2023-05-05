@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 describe('<Header />', () => {
   it('should render brand name', () => {
-
     render(
       <BrowserRouter>
         <Header />
