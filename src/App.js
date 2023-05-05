@@ -9,25 +9,73 @@ import TreeEdit from './pages/TreeEdit'
 import NotFound from './pages/NotFound'
 import Footer from './components/Footer'
 
-import mockTrees from './mockTrees'
-import { useState } from 'react'
-import { Container } from 'reactstrap'
+import { useEffect, useState } from 'react'
+import { Container, Spinner } from 'reactstrap'
 
 const App = () => {
-  const [trees, setTrees] = useState(mockTrees)
-  const id = Math.floor(Math.random() * 9000000000) + 1000000000
+  const [trees, setTrees] = useState([])
+  const [loading, setLoading] = useState(false)
 
-  const createTree = (tree) => {
-    setTrees([{ ...tree, id }, ...trees])
+  useEffect(() => {
+    setLoading(true)
+    readTree()
+  }, [])
+
+  const readTree = () => {
+    fetch('http://localhost:3000/trees')
+      .then(response => response.json())
+      .then(payload => {
+        setTrees(payload)
+        setLoading(false)
+      })
+      .catch(error => console.log("Tree read errors", error))
   }
 
-  const updateTree = (tree) => {
-    const treeToUpdate = trees.findIndex((t) => tree.id === t.id)
-    const mockArray = [...trees]
-    mockArray[treeToUpdate] = tree
-    setTrees(mockArray)
+  const createTree = (createdTree) => {
+    fetch('http://localhost:3000/trees', {
+      body: JSON.stringify(createdTree),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then(response => response.json())
+      .then(() => readTree())
+      .catch(error => console.log("Tree read errors", error))
   }
 
+  const updateTree = (selectedTree) => {
+    fetch(`http://localhost:3000/trees/${selectedTree.id}`, {
+      body: JSON.stringify(selectedTree),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+      .then(response => response.json())
+      .then(() => readTree())
+      .catch(error => console.log("Tree read errors", error))
+  }
+
+  const deleteTree = (id) => {
+    fetch(`http://localhost:3000/trees/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(() => readTree())
+      .catch(error => console.log("Tree read errors", error))
+  }
+
+  if (loading || trees.length === 0) {
+    return (
+      <Spinner>
+        Loading...
+      </Spinner>
+    )
+  }
   return (
     <>
       <Header />
@@ -42,7 +90,7 @@ const App = () => {
           />
           <Route
             path='/treeedit/:id'
-            element={<TreeEdit trees={trees} updateTree={updateTree} />}
+            element={<TreeEdit trees={trees} updateTree={updateTree} deleteTree={deleteTree} />}
           />
           <Route path='*' element={<NotFound />} />
         </Routes>

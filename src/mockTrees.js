@@ -1,7 +1,7 @@
 const trees = [
     {
         id: 1,
-        name: 'Maple',
+        name: 'TEST',
         age: 150,
         enjoys: 'Making syrup',
         image: 'https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Sugar-Maple_FGT_600x600_6ad4956a-ec6e-4ab2-a66a-1a1245471195_grande.jpg?v=1612444329'

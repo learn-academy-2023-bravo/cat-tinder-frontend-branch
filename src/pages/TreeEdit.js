@@ -11,7 +11,7 @@ import {
 import { useNavigate, useParams } from 'react-router-dom'
 import Preview from '../components/Preview'
 
-const TreeEdit = ({ updateTree, trees }) => {
+const TreeEdit = ({ updateTree, deleteTree, trees }) => {
   const navigate = useNavigate()
   const { id } = useParams()
   let currentTree = trees?.find((tree) => tree.id === +id)
@@ -32,6 +32,11 @@ const TreeEdit = ({ updateTree, trees }) => {
     e.preventDefault()
     updateTree(updatedTree)
     navigate(`/treeshow/${id}`)
+  }
+
+  const handleDelete = () => {
+    deleteTree(id)
+    navigate('/treeindex/')
   }
 
   return (
@@ -81,6 +86,9 @@ const TreeEdit = ({ updateTree, trees }) => {
             </FormGroup>
             <Button type='submit' color='primary'>
               Submit
+            </Button>
+            <Button onClick={handleDelete} color='danger'>
+              Delete
             </Button>
           </Form>
           <Preview source={updatedTree.image} />
