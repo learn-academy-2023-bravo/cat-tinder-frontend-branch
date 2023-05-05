@@ -5,7 +5,11 @@ import { BrowserRouter } from 'react-router-dom'
 
 describe('<Header />', () => {
   it('should render brand name', () => {
-    render(<Header />)
+    render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    )
 
     const brand = screen.getByText(/branch/i)
     expect(brand).toBeInTheDocument()

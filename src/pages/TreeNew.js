@@ -9,6 +9,7 @@ import {
   CardBody,
 } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
+import Preview from '../components/Preview'
 
 const TreeNew = ({ createTree }) => {
   const navigate = useNavigate()
@@ -32,7 +33,7 @@ const TreeNew = ({ createTree }) => {
 
   return (
     <>
-      <Card style={{maxWidth: '36rem', margin: 'auto'}}>
+      <Card style={{ maxWidth: '36rem', margin: 'auto' }}>
         <CardBody>
           <Form onSubmit={handleSubmit}>
             <FormGroup>
@@ -79,6 +80,7 @@ const TreeNew = ({ createTree }) => {
               Submit
             </Button>
           </Form>
+          <Preview source={newTree.image} />
         </CardBody>
       </Card>
     </>

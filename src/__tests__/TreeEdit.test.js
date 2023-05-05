@@ -1,13 +1,19 @@
 import { render, screen } from '@testing-library/react'
-import TreeNew from '../pages/TreeNew'
-import { BrowserRouter } from 'react-router-dom'
+import TreeEdit from '../pages/TreeEdit'
+import mockTrees from '../mockTrees'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
-describe('<TreeNew />', () => {
-  it('renders new tree inputs', () => {
+describe('<TreeEdit />', () => {
+  it('renders tree edit inputs', () => {
     render(
-      <BrowserRouter>
-        <TreeNew />
-      </BrowserRouter>
+      <MemoryRouter initialEntries={['/treeedit/1']}>
+        <Routes>
+          <Route
+            path='/treeedit/:id'
+            element={<TreeEdit trees={mockTrees} />}
+          />
+        </Routes>
+      </MemoryRouter>
     )
 
     const nameInput = screen.getByRole('textbox', {
