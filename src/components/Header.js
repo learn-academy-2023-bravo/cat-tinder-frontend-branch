@@ -19,7 +19,7 @@ function Header(args) {
   return (
     <div>
       <Navbar expand='md' container='xl'>
-        <NavbarBrand href='/'>
+        <NavbarBrand to='/' tag={RRNavLink}>
           <img
             src={logo}
             width={80}

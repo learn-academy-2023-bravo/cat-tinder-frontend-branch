@@ -15,12 +15,13 @@ import { Container } from 'reactstrap'
 
 function App() {
   const [trees, setTrees] = useState(mockTrees)
+  const id = Math.floor(Math.random() * 9000000000) + 1000000000;
 
   // console.log(trees)
 
   const createTree = (tree) => {
     // console.log(tree)
-    setTrees([tree, ...trees])
+    setTrees([{...tree, id}, ...trees])
   }
 
   const updateTree = (tree) => {
