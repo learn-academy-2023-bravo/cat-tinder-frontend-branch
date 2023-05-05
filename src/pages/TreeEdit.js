@@ -9,6 +9,7 @@ import {
   CardBody,
 } from 'reactstrap'
 import { useNavigate, useParams } from 'react-router-dom'
+import Preview from '../components/Preview'
 
 const TreeEdit = ({ updateTree, trees }) => {
   const navigate = useNavigate()
@@ -82,6 +83,7 @@ const TreeEdit = ({ updateTree, trees }) => {
               Submit
             </Button>
           </Form>
+          <Preview source={updatedTree.image}/>
         </CardBody>
       </Card>
     </>
