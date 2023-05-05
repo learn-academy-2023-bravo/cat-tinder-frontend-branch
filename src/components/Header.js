@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap'
+import { NavLink as RRNavLink } from 'react-router-dom'
 import logo from '../assets/branch-logo.png'
 
 function Header(args) {
@@ -31,16 +32,10 @@ function Header(args) {
         <Collapse isOpen={isOpen} navbar>
           <Nav className='me-auto' navbar>
             <NavItem>
-              <NavLink href='/treeindex'>All Trees</NavLink>
+              <NavLink to='/treeindex' tag={RRNavLink}>All Trees</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href='/treenew'>New Tree</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href='/treeshow'>View a Tree</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href='/treeedit'>Edit a Tree</NavLink>
+              <NavLink to='/treenew' tag={RRNavLink}>New Tree</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

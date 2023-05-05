@@ -16,11 +16,20 @@ import { Container } from 'reactstrap'
 function App() {
   const [trees, setTrees] = useState(mockTrees)
 
-  console.log(trees)
+  // console.log(trees)
 
   const createTree = (tree) => {
-    console.log(tree)
+    // console.log(tree)
     setTrees([tree, ...trees])
+  }
+
+  const updateTree = (tree) => {
+    console.log(tree)
+    const treeToUpdate = trees.findIndex(t => tree.id === t.id)
+    const mockArray = [...trees]
+    mockArray[treeToUpdate] = tree
+    setTrees(mockArray)
+    console.log(treeToUpdate)
   }
 
   return (
@@ -32,7 +41,7 @@ function App() {
           <Route path='/treeindex' element={<TreeIndex trees={trees} />} />
           <Route path='/treeshow/:id' element={<TreeShow trees={trees} />} />
           <Route path='/treenew' element={<TreeNew createTree={createTree}/>} />
-          <Route path='/treeedit' element={<TreeEdit />} />
+          <Route path='/treeedit/:id' element={<TreeEdit trees={trees} updateTree={updateTree}/>} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Container>
