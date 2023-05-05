@@ -13,7 +13,7 @@ import mockTrees from './mockTrees'
 import { useState } from 'react'
 import { Container } from 'reactstrap'
 
-function App() {
+const App = () => {
   const [trees, setTrees] = useState(mockTrees)
   const id = Math.floor(Math.random() * 9000000000) + 1000000000
 

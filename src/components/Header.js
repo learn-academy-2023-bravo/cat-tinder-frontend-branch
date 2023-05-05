@@ -11,7 +11,7 @@ import {
 import { NavLink as RRNavLink } from 'react-router-dom'
 import logo from '../assets/branch-logo.png'
 
-function Header() {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen)
