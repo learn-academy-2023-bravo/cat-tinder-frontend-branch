@@ -1,6 +1,12 @@
 ## First Developer (Raymond)
 
-Find your forever branch with Branch, a dating app for trees. [navigate to /treeindex] View other single trees in your area. [Click on tree] View a trees profile to learn about what they enjoy, how old they are, see what they look like, and get to know their name. If you notice some out of date information, click edit to fill out a form to update a tree [click edit]. If you know a single tree in your area navigate to the new tree page to get them registered. [navigate to /treenew]
+Find your forever branch with Branch, a dating app for trees. 
+
+- Logo and favicon generated using the Dalle AI image generation tool
+- Fonts from google fonts
+- Footer component to show off the awesome devs who crafted Branch
+
+[navigate to /treeindex] View other single trees in your area. [Click on tree] View a trees profile to learn about what they enjoy, how old they are, see what they look like, and get to know their name. If you notice some out of date information, click edit to fill out a form to update a tree [click edit]. If you know a single tree in your area navigate to the new tree page to get them registered. [navigate to /treenew]
 
 When creating a new tree or updating an existing one Branch is equipped with an image preview feature so you can quickly verify that the image url is correct.
 
@@ -35,3 +41,7 @@ As you can see when you reach the end of the list you will be taken to the first
 [code tree show]
 
 Talk about next and previous variables
+
+[navigate to homepage]
+
+This concludes our presentation. If you care about the environment then help trees in your area find the love they deserve.
