@@ -41,6 +41,7 @@ const TreeEdit = ({ updateTree, deleteTree, trees }) => {
 
   return (
     <>
+      <h1 style={{textAlign: 'center'}}>Edit Tree</h1>
       <Card style={{ maxWidth: '36rem', margin: 'auto' }}>
         <CardBody>
           <Form onSubmit={handleSubmit}>
@@ -84,12 +85,14 @@ const TreeEdit = ({ updateTree, deleteTree, trees }) => {
                 value={updatedTree.image}
               />
             </FormGroup>
+              <div className='show-buttons'>
             <Button type='submit' color='primary'>
               Submit
             </Button>
-            <Button onClick={handleDelete} color='danger'>
+            <Button onClick={handleDelete} color='danger' outline>
               Delete
             </Button>
+            </div>
           </Form>
           <Preview source={updatedTree.image} />
         </CardBody>

@@ -1,5 +1,19 @@
-.App {
-  text-align: center;
+#root {
+  font-family: 'Inter';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: 'Cal Sans';
+}
+
+.navbar-brand {
+  color: #3d5226 !important;
 }
 
 .App-logo {
@@ -43,7 +57,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color:peru;
+  color: peru;
 }
 
 .footer {
@@ -59,31 +73,34 @@
   margin: 2rem 0;
   transition: transform 0.3s;
   overflow: hidden;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
 }
 
-.tree-card:hover {
-  transform: scale(1.03);
-}
-
-.tree-card img {
-  height: 400px;
-  object-fit: cover;
+.card-title {
+  color: #3d5226;
 }
 
 .show-profile {
   display: flex;
   flex-direction: column;
-}
 
-.show-profile h1, 
-.show-profile p {
-  text-align: center;
-}
+  h1,
+  p {
+    text-align: center;
+  }
 
-
-.show-profile img {
-  height: 500px;
-  object-fit: contain;
+  img {
+    height: 500px;
+    object-fit: contain;
+  }
 }
 
 .show-container {
