@@ -33,6 +33,7 @@ const TreeNew = ({ createTree }) => {
 
   return (
     <>
+      <h1 style={{textAlign: 'center'}}>New Tree</h1>
       <Card style={{ maxWidth: '36rem', margin: 'auto' }}>
         <CardBody>
           <Form onSubmit={handleSubmit}>

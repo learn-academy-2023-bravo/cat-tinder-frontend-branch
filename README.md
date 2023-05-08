@@ -1,26 +1,37 @@
 ## First Developer (Raymond)
-- Show off the app UI (how the app looks)
 
-Show off the homepage, tree index, tree show
+Find your forever branch with Branch, a dating app for trees. [navigate to /treeindex] View other single trees in your area. [Click on tree] View a trees profile to learn about what they enjoy, how old they are, see what they look like, and get to know their name. If you notice some out of date information, click edit to fill out a form to update a tree [click edit]. If you know a single tree in your area navigate to the new tree page to get them registered. [navigate to /treenew]
 
-- What is one UI feature in which you are proud
+When creating a new tree or updating an existing one Branch is equipped with an image preview feature so you can quickly verify that the image url is correct.
 
-Image URL Preview
+[paste: https://martinshomeandgarden.com/wp-content/uploads/2023/01/fuji-apple-tree-Image.jpg]
 
-- Show the code for that feature
+Notice if the image extension is removed, the preview image is replaced with an error message.
+
+[remove extension]
+[code image preview]
+
+To get the image preview feature to work we used state to hold the validity of the image url. A useeffect is utilized to revalidate the url when it changes. We are then using conditional rendering to display a valid image or notifying of an invalid image.
+
+Next Sam will demonstrate the functionality of Branch.
 
 ## Second Developer (Sam)
-- Show off the app functionality (how the app behaves)
 
-Demo CREATE, READ, UPDATE, DELETE
+Since we are here on the create page let's finish making the profile for our tree.
 
-Name: Granny Smith
-Age: 200
-Enjoys: Baking apple pies
-Image: https://martinshomeandgarden.com/wp-content/uploads/2023/01/fuji-apple-tree-Image.jpg
+- [add extension back to image url]
+- [name: Granny Smith]
+- [age: 200]
+- [enjoys: Baking apple pies]
 
-- What is one functionality feature in which you are proud
+(enjoys must be more than 10 chars)
 
-Arrows to navigate between trees
+After creating a tree you will be routed to the tree index page. This page will grab all the trees from the database and display them to you. [click on granny] Granny Smith just had a birthday so lets update her profile. [add 1 to her age] She also picked up a new hobby of X. After updating her profile she found a match so lets delete her from Branch. [click granny and edit then delete] 
 
-- Show the code for that feature
+A functionality feature we are proud of is the ability to quickly navigate between trees. [click tree] These arrow buttons on either side of the page let you navigate to the next and previous tree in the database.
+
+As you can see when you reach the end of the list you will be taken to the first tree.
+
+[code tree show]
+
+Talk about next and previous variables

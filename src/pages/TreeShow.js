@@ -91,7 +91,7 @@ const TreeShow = ({ trees }) => {
           Back
         </Button>
         <Button
-          color='secondary'
+          color='primary'
           to={`/treeedit/${id}`}
           tag={NavLink}
           outline={true}

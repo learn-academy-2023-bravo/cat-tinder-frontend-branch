@@ -30,7 +30,7 @@ const Header = () => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className='me-auto' navbar>
+          <Nav className='ms-auto' navbar>
             <NavItem>
               <NavLink to='/treeindex' tag={RRNavLink}>
                 All Trees
